@@ -1,6 +1,6 @@
 import React, { useState, useEffect }from "react";
 import ReactMapGL, {Marker, Popup} from "react-map-gl";
-import * as stationData from "./data/stations.json";
+import * as stationData from "./data/stations-tokyo.json";
 import './index.css';
 
 function App() {
@@ -9,10 +9,11 @@ function App() {
     latitude: 35.6762,
     longitude: 139.6503,
     zoom: 10,
-    width: "100vw",
-    height: "100vh"
+    width: "80vw",
+    height: "80vh"
   })
 
+  console.log(stationData[1]);
   return (
     <div className="App">
       <ReactMapGL
