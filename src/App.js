@@ -17,7 +17,7 @@ function App() {
     //map over data and get stations
 
   }, []);
-  console.log(stationData[0]);
+  console.log(stationData.default);
   return (
     <div className="App">
       <ReactMapGL
@@ -29,6 +29,19 @@ function App() {
       }}
       >
       
+        {/* iterate over park data */}
+        {stationData.default.map((station) => (
+          <Marker
+          longitude={station.lon}
+          latitude={station.lat}
+          
+          >
+            <button 
+            className="marker-btn">
+              <img src="/skateboarding.svg" alt="Skatepark Icon"/>
+            </button>
+          </Marker>
+        ))}
       </ReactMapGL>
     </div>
   );
