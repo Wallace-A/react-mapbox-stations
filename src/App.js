@@ -4,7 +4,7 @@ import * as stationData from "./data/stations.json";
 import './index.css';
 
 function App() {
-  const [stations, setStations] = useState([]);
+  const [selectedStation, setSelectedStation] = useState([]);
   // viiewport
   const [viewport, setViewport] = useState({
     latitude: 35.6500,
@@ -17,7 +17,7 @@ function App() {
     //map over data and get stations
 
   }, []);
-  console.log(stationData[0].stations);
+  console.log(stationData[0]);
   return (
     <div className="App">
       <ReactMapGL
