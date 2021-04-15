@@ -1,19 +1,23 @@
 import React, { useState, useEffect }from "react";
 import ReactMapGL, {Marker, Popup} from "react-map-gl";
-import * as stationData from "./data/stations-tokyo.json";
+import * as stationData from "./data/stations.json";
 import './index.css';
 
 function App() {
+  const [stations, setStations] = useState([]);
   // viiewport
   const [viewport, setViewport] = useState({
-    latitude: 35.6762,
-    longitude: 139.6503,
+    latitude: 35.6500,
+    longitude: 139.7500,
     zoom: 10,
     width: "80vw",
     height: "80vh"
   })
+  useEffect(() => {
+    //map over data and get stations
 
-  console.log(stationData[1]);
+  }, []);
+  console.log(stationData[0].stations);
   return (
     <div className="App">
       <ReactMapGL
